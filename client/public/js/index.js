@@ -10,6 +10,7 @@ async function start() {
             const getIpfsUrl = 'http://127.0.0.1:3000/ipfs';
             let web3 = new Web3(Web3.givenProvider || "ws://localhost:8545");
             // window.ethereum
+            await window.ethereum.send('eth_requestAccounts');
             const accounts = await ethereum.request({ method: 'eth_accounts' });
             console.log(accounts)
 
