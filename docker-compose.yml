@@ -1,0 +1,22 @@
+version: '3'
+services:
+  ipfs:
+    image: ipfs/go-ipfs:latest
+    container_name: ipfs_host
+    volumes:
+      - ./export:/export
+      - ./ipfs_data:/data/ipfs
+    ports:
+      - '4001:4001'
+      - '4001:4001/udp'
+      - '127.0.0.1:8080:8080'
+      - '127.0.0.1:5001:5001'
+  # client:
+  #   build:
+  #     context: ./client
+  #     dockerfile: Dockerfile
+  #   container_name: client
+  #   ports:
+  #     - '3000:3000'
+  #   depends_on: 
+  #     - 'ipfs'

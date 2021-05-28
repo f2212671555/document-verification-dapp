@@ -1,0 +1,136 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+        <!-- JavaScript Bundle with Popper -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+        <!-- Eth Web3.js -->
+        <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+        <!-- ipfs.js -->
+        <script src="https://cdn.jsdelivr.net/npm/ipfs/dist/index.min.js"></script>
+        <script type="text/javascript" src="../js/index.js"></script>
+    </head>
+    <body>
+        <div class="jumbotron jumbotron-fluid" style="background-color:#D0D0D0">
+            <div class="container" style="background-color:#B0B0B0">
+              <h1>Document Verification</h1>
+              <p class="lead">This is a homework.</p>
+            </div>
+        </div>
+        <div class="card">
+            <h5 class="card-header">Get Number of Documents</h5>
+            <div class="card-body row">
+                <div class="col">
+                    <p>Number</p>
+                </div>
+                <div class="col">
+                    <p class="numDocs">0</p>
+                </div>
+            </div>
+            <button class="btn btn-secondary getNumDocs" type="button" id="button-addon2">Get</button>
+          </div>
+        
+        <div class="card">
+            <h5 class="card-header">Get Document Information</h5>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col">
+                        <p>Block time</p>
+                    </div>
+                    <div class="col">
+                        <p class="docInfo">(EMPTY)</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <p>Owner</p>
+                    </div>
+                    <div class="col">
+                        <p class="docOwner">(EMPTY)</p>
+                    </div>
+                </div>
+            </div>
+            <div class="input-group mb-3">
+                <input type="text" class="form-control getDocumentVal" placeholder="hexstring hash">
+                <button class="btn btn-secondary getDocument" type="button">GET</button>
+            </div>
+        </div>
+
+        <div class="card">
+            <h5 class="card-header">Check Document Exists</h5>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col">
+                        <p>Exist</p>
+                    </div>
+                    <div class="col">
+                        <p class="docExists">(EMPTY)</p>
+                    </div>
+                </div>
+            </div>
+            <div class="input-group mb-3">
+                <input type="text" class="form-control checkDocumentExistsVal" placeholder="hexstring hash">
+                <button class="btn btn-secondary checkDocumentExists" type="button">Check</button>
+            </div>
+        </div>
+
+        <div class="card">
+            <h5 class="card-header">Upload Document to IPFS</h5>
+            <div class="card-body">
+                <form action="ipfs" method="POST" enctype="multipart/form-data">
+                    <div class="row">
+                        <div class="form-group col-10">
+                            <input type="file" name="filetoupload" class="form-control">
+                        </div>
+                        <div class="form-group col">
+                            <button type="submit" class="btn btn-primary">UPLOAD</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="card">
+            <h5 class="card-header">Upload Document IPFS Hash to the Smart Contract</h5>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col">
+                        <p>Transcation Status</p>
+                    </div>
+                    <div class="col">
+                        <p class="transcationStatus">(EMPTY)</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <p>Hexstring Hash</p>
+                    </div>
+                    <div class="col">
+                        <p class="bytesHash">(EMPTY)</p>
+                    </div>
+                </div>
+            </div>
+            <div class="input-group mb-3">
+                <input type="text" class="form-control uploadFileVal" placeholder="base58 hash">
+                <button class="btn btn-secondary uploadFile" type="button">Upload</button>
+            </div>
+        </div>
+<!-- 
+        <div class="card">
+            <h5 class="card-header">Download Document with IPFS Hash</h5>
+            <div class="card-body">
+                
+            </div>
+            <div class="input-group mb-3">
+                <input type="text" class="form-control downloadFileVal" placeholder="base58 hash">
+                <button class="btn btn-secondary downloadFile" type="button">download File</button>
+            </div>
+        </div> -->
+
+
+
+        
+    </body>
+</html>
