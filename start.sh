@@ -13,6 +13,7 @@ docker-compose up -d ipfs
 
 echo "install libraries"
 cd client
+mkdir files
 # install libraries with package.json
 npm install
 

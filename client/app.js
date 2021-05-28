@@ -56,12 +56,19 @@ app.get("/ipfs/:hashcode", async function(req, res) {
 	}
   
 });
+// const util = require('util');
 
 // upload file to ipfs
 app.post("/ipfs", (req, res) => {
 	
 	const file = req.files.filetoupload;
 	const filename = req.files.filetoupload.name;
+	// const dir = 'files';
+	// const makeDir = util.promisify(fs.mkdir);
+
+	// makeDir(dir)
+	// .then( r => {
+
 	const filepath = 'files/' + filename;
 
 	file.mv(filepath, async(err) => {
@@ -76,6 +83,8 @@ app.post("/ipfs", (req, res) => {
 		}))
 		res.render("upload",{filename, hashcode});
 	})
+	// });
+	
 	
 });
 // ipfs api: https://github.com/ipfs/js-ipfs/blob/master/docs/core-api/FILES.md#ipfsadddata-options
