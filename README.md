@@ -1,8 +1,10 @@
-TestNet is Ropsten
-Start a local ipfs service and a document verification service
+## TestNet is Ropsten
 
+## Start a local ipfs service and a document verification service
+```sh
 bash start.sh
-
-Stop services
-
+```
+## Stop services
+```sh
 bash stop.sh
+```
