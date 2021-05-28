@@ -80,13 +80,9 @@ app.post("/ipfs", (req, res) => {
 });
 // ipfs api: https://github.com/ipfs/js-ipfs/blob/master/docs/core-api/FILES.md#ipfsadddata-options
 const addFile = async(filepath) => {
-	console.log("1")
-	console.log(filepath)
 
 	try {
 		const file = fs.readFileSync(filepath);
-		console.log(file)
-		console.log("2")
 		const added = await ipfs.add(file);
 		return added.cid.toString();
 	} catch (err){
