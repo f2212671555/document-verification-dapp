@@ -217,6 +217,7 @@ async function start() {
                     bytesHashText.textContent = hashCode;
                 })
                 .on('error', function(error, receipt) {
+                    transcationStatusText.textContent = 'error';
                     console.log(error);
                 });
             });
